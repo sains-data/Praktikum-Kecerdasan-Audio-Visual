@@ -32,12 +32,15 @@
       }
     }
     * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
+    html, body {
       margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color: var(--text); background: radial-gradient(1200px 600px at 10% -10%, #1b2a55, transparent),
-                             radial-gradient(1000px 800px at 90% -20%, #2b185c, transparent),
-                             var(--bg);
+      color: var(--text);
+      /* Smoother, less-banded background */
+      background: radial-gradient(900px 600px at 15% -10%, rgba(90,139,255,.22) 0%, rgba(90,139,255,0) 60%),
+                  radial-gradient(800px 700px at 85% -15%, rgba(167,139,250,.20) 0%, rgba(167,139,250,0) 65%),
+                  linear-gradient(180deg, #0b1225 0%, #0b1020 55%, #0a0f1d 100%);
+      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    }
       -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
     }
     .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
@@ -45,7 +48,7 @@
     /* Header */
     header {
       position: sticky; top: 0; z-index: 20; backdrop-filter: saturate(1.2) blur(6px);
-      background: linear-gradient(to bottom, rgba(2, 6, 23, 0.6), rgba(2, 6, 23, 0.0));
+      background: rgba(2, 6, 23, 0.55);
       border-bottom: 1px solid rgba(148, 163, 184, .15);
     }
     .nav {
@@ -139,7 +142,7 @@
   <main class="container">
     <section class="hero">
       <div>
-        <h1>Praktikum Kecerdasan Audio dan Visual</h1>
+        <h1>Landing Page Modul Praktikum</h1>
         <p class="lead">Mata kuliah Kecerdasan Audio dan Visual dirancang untuk membekali mahasiswa dengan pemahaman menyeluruh tentang pengolahan dan analisis data audio serta visual dalam konteks kecerdasan buatan. Perkuliahan diawali dengan pengenalan jenis data audio dan visual serta konsep dasar kecerdasan audio-visual. Mahasiswa kemudian mempelajari metode analisis audio secara bertahap, mulai dari ekstraksi fitur, pengenalan audio, hingga pemisahan sumber suara dan peningkatan kualitas audio secara robust. Pada bagian kecerdasan visual, mahasiswa dikenalkan pada dasar-dasar citra digital dan berbagai teknik pengolahannya seperti operasi dasar dan peningkatan kualitas citra. Pada tahap lanjutan, materi meliputi aplikasi kecerdasan audio untuk pengenalan suara, suara umum, serta musik, sedangkan pada sisi visual, mahasiswa mendalami deteksi dan segmentasi objek dalam citra serta penerapan computer vision. Mata kuliah ini juga mengintegrasikan konsep AI Internet of Things (AIoT) melalui pengenalan Edge AI dan implementasinya dalam pemrosesan data audio dan visual secara efisien di perangkat lokal maupun robotik.</p>
         <div class="cta">
           <a class="btn primary" href="#grid">Mulai Jelajah Modul</a>
@@ -252,7 +255,7 @@
     </section>
 
     <footer>
-      <p>© <span id="year"></span> Kecerdasan Audio & Visual • Fakultas Sains • Program Studi Sains Data.
+      <p>© <span id="year"></span> Kecerdasan Audio & Visual • Fakultas Sains Data.
         Dibangun untuk GitHub Pages. <a href="#top">Kembali ke atas ↑</a>
       </p>
     </footer>
